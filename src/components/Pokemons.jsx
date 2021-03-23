@@ -4,7 +4,11 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllTypes, getPokemonCards } from '../redux/pokemons-reducer'
+import {
+  getAllTypes,
+  getPokemonCards,
+  setActivePokemonClear,
+} from '../redux/pokemons-reducer'
 import { Cards } from './Cards'
 import MenuListComposition from './PopUp'
 
@@ -52,6 +56,7 @@ export const Pokemons = React.memo(() => {
 
   const onAddCards = () => {
     dispatch(getPokemonCards(limit, offset))
+    dispatch(setActivePokemonClear())
   }
 
   useEffect(() => {

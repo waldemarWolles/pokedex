@@ -1,6 +1,7 @@
 import { pokemonsAPI } from '../api/pokemons-api'
 const SET_POKEMONS = 'pokemons-reducer/setPokemons'
 const SET_ACTIVE_POKEMON = 'pokemons-reducer/setActivePokemon'
+const SET_ACTIVE_POKEMON_CLEAR = 'pokemons-reducer/setActivePokemonClear'
 const SET_ALL_TYPES = 'pokemons-reducer/setAllTypes'
 const SET_ACTIVE_TYPE = 'pokemons-reducer/setActiveType'
 const SET_POKEMONS_IN_PROGRESS = 'pokemons-reducer/setPokemonsInProgress'
@@ -33,6 +34,14 @@ const pokemonsReducer = (state = initialState, action) => {
           ...state.cards.find((element) => element.name === action.name),
         },
         isChosenPokemon: true,
+      }
+    }
+
+    case SET_ACTIVE_POKEMON_CLEAR: {
+      return {
+        ...state,
+        activePokemon: {},
+        isChosenPokemon: false,
       }
     }
 
@@ -74,6 +83,10 @@ export const setPokemons = (pokemons, limit, offset) => ({
 export const setActivePokemon = (name) => ({
   type: SET_ACTIVE_POKEMON,
   name,
+})
+
+export const setActivePokemonClear = () => ({
+  type: SET_ACTIVE_POKEMON_CLEAR,
 })
 
 export const setAllTypes = (types) => ({
