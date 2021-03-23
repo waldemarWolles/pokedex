@@ -25,9 +25,9 @@ export const Cards = () => {
           }
           return false
         })
-        .map((card) => (
+        .map((card, index) => (
           <CardItem
-            key={card.name}
+            key={`${card.name + index}`}
             id={card.id}
             name={card.name}
             types={card.types}

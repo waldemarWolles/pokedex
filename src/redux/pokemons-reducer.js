@@ -29,7 +29,9 @@ const pokemonsReducer = (state = initialState, action) => {
     case SET_ACTIVE_POKEMON: {
       return {
         ...state,
-        activePokemon: { ...state.cards[action.id] },
+        activePokemon: {
+          ...state.cards.find((element) => element.name === action.name),
+        },
         isChosenPokemon: true,
       }
     }
@@ -69,9 +71,9 @@ export const setPokemons = (pokemons, limit, offset) => ({
   offset,
 })
 
-export const setActivePokemon = (id) => ({
+export const setActivePokemon = (name) => ({
   type: SET_ACTIVE_POKEMON,
-  id,
+  name,
 })
 
 export const setAllTypes = (types) => ({

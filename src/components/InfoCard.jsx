@@ -101,11 +101,11 @@ const useStyles = makeStyles((theme) => ({
 
 export const InfoCard = () => {
   const classes = useStyles()
-
+  debugger
   const { isChosenPokemon, activePokemon } = useSelector(
     (state) => state.pokemons
   )
-
+  debugger
   return (
     <>
       <Grid

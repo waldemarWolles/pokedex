@@ -56,7 +56,7 @@ export const CardItem = ({ id, name, types }) => {
 
   const dispatch = useDispatch()
   const choosePokemon = (e) => {
-    dispatch(setActivePokemon(id - 1))
+    dispatch(setActivePokemon(name))
   }
 
   console.log('render')
