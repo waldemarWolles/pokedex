@@ -59,8 +59,6 @@ export const CardItem = ({ id, name, types }) => {
     dispatch(setActivePokemon(name))
   }
 
-  console.log('render')
-
   return (
     <>
       <Grid item={true} xs={12} sm={6} md={6} lg={4}>
@@ -96,7 +94,6 @@ export const CardItem = ({ id, name, types }) => {
                   )
                 })}
               </Typography>
-              {/* )} */}
             </CardContent>
           </Card>
         </CardActionArea>

@@ -8,9 +8,7 @@ export const pokemonsAPI = {
     const requestsArray = response.data.results.map(async (request) => {
       return axios.get(`https://pokeapi.co/api/v2/pokemon/${request.name}`)
     })
-    debugger
     const responseAll = await axios.all(requestsArray)
-    debugger
     return responseAll
   },
 
