@@ -1,0 +1,30 @@
+.header {
+  text-align: center;
+  width: 100%;
+  background-color: green;
+  padding: 50px;
+}
+
+.pokemons {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon,
+.pokemon_item_details {
+  text-align: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.pokemon {
+  background: red;
+}
+.pokemon_item_details {
+  background: yellow;
+}
+
+.button {
+  max-width: 100px;
+  background-color: blue;
+}
