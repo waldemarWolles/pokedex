@@ -6,13 +6,6 @@ export const pokemonsAPI = {
       `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
     )
     const requestsArray = response.data.results.map(async (request) => {
-      // On my PC this request works but on gh-pages something goes wrong.
-      // And I solved this problem in the simplest way
-      // if (request.url === 'https://pokeapi.co/api/v2/pokemon/9/') {
-      //   debugger
-      //   return axios.get(`https://pokeapi.co/api/v2/pokemon/${request.name}`)
-      // } else {
-      //   debugger
       return axios.get(`https://pokeapi.co/api/v2/pokemon/${request.name}`)
     })
     debugger
